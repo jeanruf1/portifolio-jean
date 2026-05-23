@@ -1,3 +1,5 @@
+"use client";
+
 import { SplitText, FadeIn } from "../ui/Animations";
 
 export default function Hero() {

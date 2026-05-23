@@ -1,3 +1,5 @@
+"use client";
+
 import { FadeIn } from "../ui/Animations";
 
 export default function Contact() {
