@@ -9,12 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        cyan: {
-          500: "#00e5ff",
+        background: "#0a0a0a",
+        foreground: "#ffffff",
+        neutral: {
+          950: "#050505",
+          900: "#111111",
+          800: "#222222",
+          300: "#d4d4d4",
+          400: "#a3a3a3",
+          500: "#737373",
         }
       },
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        oswald: ["var(--font-oswald)", "sans-serif"],
+      }
     },
   },
   plugins: [],

@@ -1,4 +1,7 @@
-import { FadeIn } from "../ui/Animations";
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
@@ -25,49 +28,56 @@ const experiences = [
 ];
 
 export default function Experience() {
-  return (
-    <section id="experience" className="py-24 px-6 md:px-24 bg-background overflow-hidden">
-      <div className="max-w-5xl mx-auto">
-        <FadeIn>
-          <h3 className="text-cyan-500 font-mono mb-4 tracking-widest uppercase text-sm md:text-base">// EXPERIENCE</h3>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-16">
-            Professional journey.
-          </h2>
-        </FadeIn>
+  const { t } = useLanguage();
 
-        <div className="relative border-l border-neutral-800 ml-3 md:ml-0 space-y-12 pb-8">
+  return (
+    <section id="experience" className="py-32 px-6 md:px-24 bg-black text-white">
+      <div className="max-w-7xl mx-auto">
+        
+        <div className="mb-20">
+          <h3 className="text-neutral-500 font-mono mb-6 tracking-widest uppercase text-sm">
+            {t("exp.subtitle")}
+          </h3>
+          <h2 className="font-oswald text-5xl md:text-7xl font-bold uppercase leading-[0.9] tracking-tighter">
+            <span className="block text-neutral-400">{t("exp.title1")}</span>
+            <span className="block">{t("exp.title2")}</span>
+          </h2>
+        </div>
+
+        <div className="relative border-l-2 border-neutral-800 ml-4 md:ml-0 space-y-16 pb-8">
           {experiences.map((exp, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
-              <div className="relative pl-8 md:pl-12">
-                {/* Timeline dot */}
-                <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
-                
-                {/* Card */}
-                <div className="p-8 rounded-2xl border border-neutral-800 bg-neutral-900/40 hover:border-cyan-500/30 transition-colors group">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                    <h4 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{exp.role}</h4>
-                    <span className="mt-2 md:mt-0 px-3 py-1 bg-neutral-800/80 rounded-full text-xs font-mono text-neutral-400 border border-neutral-700">{exp.date}</span>
-                  </div>
-                  
-                  <div className="text-cyan-500 mb-6 flex items-center gap-2 font-medium">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                    {exp.company}
-                  </div>
-                  
-                  <p className="text-neutral-400 leading-relaxed mb-8 text-lg">
-                    {exp.desc}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tech.map((t, i) => (
-                      <span key={i} className="px-3 py-1 rounded-md bg-transparent text-sm text-cyan-400 border border-cyan-900/50">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative pl-10 md:pl-16 group"
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-[-9px] top-3 w-4 h-4 rounded-full bg-white border-[4px] border-black transition-transform group-hover:scale-150" />
+              
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
+                <h4 className="font-oswald text-3xl md:text-4xl font-bold uppercase tracking-tight">{exp.role}</h4>
+                <span className="mt-2 md:mt-0 font-mono text-sm text-neutral-500">{exp.date}</span>
               </div>
-            </FadeIn>
+              
+              <div className="text-neutral-300 font-bold uppercase tracking-widest mb-6">
+                {exp.company}
+              </div>
+              
+              <p className="text-neutral-400 font-sans text-lg leading-relaxed mb-8 max-w-3xl">
+                {exp.desc}
+              </p>
+              
+              <div className="flex flex-wrap gap-2">
+                {exp.tech.map((tech, i) => (
+                  <span key={i} className="px-3 py-1 bg-neutral-900 border border-neutral-800 text-xs font-bold uppercase tracking-widest text-neutral-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
