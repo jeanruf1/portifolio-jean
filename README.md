@@ -37,6 +37,7 @@ git clone https://github.com/jeanruf1/portfolio-jean.git
 cd portfolio-jean
 ```
 
+<<<<<<< HEAD
 ---
 
 ## Português
@@ -72,3 +73,37 @@ cd portfolio-jean
 ---
 
 *Desenhado e desenvolvido por Jean Rufino.*
+=======
+### 2. Configure Environment Variables
+Copy the `.env.example` file to create your local `.env.local` configuration.
+```bash
+cp .env.example .env.local
+```
+Add your free Web3Forms access key to `.env.local` to enable contact form submissions.
+
+### 3. Run with Docker (Recommended)
+This project is configured to run flawlessly with Docker and Docker Compose.
+```bash
+docker compose up
+```
+Open `http://localhost:3000` to view it in the browser.
+
+### 4. Or run locally with Node.js
+If you prefer running directly on your host machine:
+```bash
+npm install
+npm run dev
+```
+
+## 🛠 Tech Stack
+
+* **Framework:** React + Next.js
+* **Styling:** Tailwind CSS + Lucide Icons
+* **Animations:** Framer Motion
+* **Deployment/Dev:** Docker + Docker Compose
+* **API Integration:** Web3Forms
+
+## 📝 License
+
+© 2026 Jean Rufino. All rights reserved.
+>>>>>>> dev
