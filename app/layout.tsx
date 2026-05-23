@@ -7,8 +7,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald", weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: "Jean Pereira Rufino de Lima | Software Engineer",
-  description: "Portfolio de Engenharia de Dados, Automação (RPA) e Analytics",
+  title: "Jean Rufino | Software Engineer & IA",
+  description: "Portfolio de Engenharia de Dados, Automação e Engenheiro de IA",
+  icons: {
+    icon: '/icon.png',
+  }
 };
 
 export default function RootLayout({

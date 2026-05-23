@@ -20,7 +20,7 @@ const translations = {
     "nav.contact": "CONTATO",
     "hero.subtitle": "// ENGENHARIA DE DADOS & IA",
     "hero.title1": "OLÁ, EU SOU",
-    "hero.title2": "JEAN PEREIRA.",
+    "hero.title2": "JEAN RUFINO.",
     "hero.desc": "Especialista em orquestração de workflows, arquiteturas RAG e pipelines escaláveis. Foco no design e implementação de soluções automatizadas para embasar decisões corporativas de ponta a ponta.",
     "hero.btn.projects": "VER PROJETOS",
     "hero.btn.contact": "FALAR COMIGO",
@@ -31,6 +31,9 @@ const translations = {
     "tech.subtitle": "// TECH STACK",
     "tech.title1": "Ferramentas que impulsionam",
     "tech.title2": "a inovação.",
+    "skills.subtitle": "// TECH STACK & SKILLS",
+    "skills.title1": "Visão geral das",
+    "skills.title2": "ferramentas.",
     "exp.subtitle": "// EXPERIÊNCIA",
     "exp.title1": "Jornada",
     "exp.title2": "profissional.",
@@ -43,6 +46,8 @@ const translations = {
     "contact.form.email": "Email",
     "contact.form.msg": "Mensagem",
     "contact.form.btn": "ENVIAR MENSAGEM",
+    "contact.form.success": "Mensagem enviada com sucesso!",
+    "contact.form.error": "Erro ao enviar a mensagem. Tente novamente.",
     "footer.rights": "Todos os direitos reservados."
   },
   en: {
@@ -51,7 +56,7 @@ const translations = {
     "nav.contact": "CONTACT",
     "hero.subtitle": "// DATA ENGINEERING & AI",
     "hero.title1": "HI, I AM",
-    "hero.title2": "JEAN PEREIRA.",
+    "hero.title2": "JEAN RUFINO.",
     "hero.desc": "Specialist in workflow orchestration, RAG architectures, and scalable pipelines. Focused on designing and implementing automated solutions to drive corporate decisions end-to-end.",
     "hero.btn.projects": "VIEW PROJECTS",
     "hero.btn.contact": "LET'S TALK",
@@ -62,6 +67,9 @@ const translations = {
     "tech.subtitle": "// TECH STACK",
     "tech.title1": "Tools that power",
     "tech.title2": "innovation.",
+    "skills.subtitle": "// TECH STACK & SKILLS",
+    "skills.title1": "Toolkit",
+    "skills.title2": "Overview.",
     "exp.subtitle": "// EXPERIENCE",
     "exp.title1": "Professional",
     "exp.title2": "journey.",
@@ -74,6 +82,8 @@ const translations = {
     "contact.form.email": "Email",
     "contact.form.msg": "Message",
     "contact.form.btn": "SEND MESSAGE",
+    "contact.form.success": "Message sent successfully!",
+    "contact.form.error": "Error sending the message. Please try again.",
     "footer.rights": "All rights reserved."
   }
 };

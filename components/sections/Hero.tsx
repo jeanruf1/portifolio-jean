@@ -63,7 +63,7 @@ export default function Hero() {
         >
           <img 
             src="/profile.png" 
-            alt="Jean Pereira" 
+            alt="Jean Rufino" 
             className="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 hover:scale-105 hover:grayscale-0"
             onError={(e) => {
               e.currentTarget.src = "https://via.placeholder.com/600x600/111111/ffffff?text=PROFILE";

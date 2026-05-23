@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 
 interface Project {
   title: string;
@@ -9,8 +10,13 @@ interface Project {
   tags: string[];
 }
 
-export default function Projects({ projects }: { projects: Project[] }) {
-  const { t } = useLanguage();
+interface BilingualProjects {
+  pt: Project[];
+  en: Project[];
+}
+
+export default function Projects({ projects }: { projects: BilingualProjects }) {
+  const { t, language } = useLanguage();
 
   return (
     <section id="projects" className="relative py-32 px-6 md:px-24 bg-white text-black">
@@ -26,20 +32,13 @@ export default function Projects({ projects }: { projects: Project[] }) {
               <span className="block text-neutral-400">{t("projects.title1")}</span>
               <span className="block">{t("projects.title2")}</span>
             </h2>
-            <a 
-              href="https://github.com/jeanruf1" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="inline-flex items-center gap-4 px-8 py-4 rounded-full border-2 border-black font-oswald text-lg font-bold tracking-wider uppercase transition-all hover:bg-black hover:text-white"
-            >
-              {t("projects.github")}
-            </a>
+            {/* Removido o botão do GitHub pois os projetos são privados */}
           </div>
         </div>
 
         {/* Scrollable Right Projects List */}
         <div className="w-full md:w-2/3 flex flex-col gap-8">
-          {projects.map((proj, idx) => (
+          {projects[language]?.map((proj, idx) => (
             <motion.div 
               key={idx}
               initial={{ opacity: 0, y: 50 }}
@@ -55,12 +54,15 @@ export default function Projects({ projects }: { projects: Project[] }) {
                 {proj.desc}
               </p>
               
-              <div className="flex flex-wrap gap-2">
-                {proj.tags.map(tag => (
-                  <span key={tag} className="px-4 py-2 border border-black text-xs font-bold uppercase tracking-widest">
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex flex-col gap-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">Tech Stack:</span>
+                <div className="flex flex-wrap gap-2">
+                  {proj.tags.map(tag => (
+                    <span key={tag} className="px-4 py-2 border border-black text-xs font-bold uppercase tracking-widest">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

@@ -3,32 +3,57 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 
-const experiences = [
-  {
-    role: "Analista Júnior – Soluções de IA e Dados",
-    company: "Travelex Bank",
-    date: "09/2025 – Atual",
-    desc: "Estruturação de bancos relacionais e vetoriais, arquiteturas RAG integradas a APIs de LLMs, construção de microsserviços em Python e automações escaláveis no n8n.",
-    tech: ["Python", "RAG", "LLMs", "n8n", "GitFlow"]
-  },
-  {
-    role: "Estagiário em Análise de Dados e RPA",
-    company: "Travelex Bank",
-    date: "07/2024 – 09/2025",
-    desc: "Desenvolvimento de dashboards no Power BI, rotinas ETL em Python, modelagem de BDs e deploy de microsserviços Flask em ambientes Windows Server/Linux.",
-    tech: ["Power BI", "Python", "SQL Server", "Flask", "Docker"]
-  },
-  {
-    role: "Auxiliar de Faturamento de Dados (Aprendiz)",
-    company: "Hospital de Caieiras (AMIL)",
-    date: "02/2023 – 03/2024",
-    desc: "Tratamento de dados e criação de lógicas avançadas em planilhas para higienização de grandes volumes de registros operacionais.",
-    tech: ["Excel Avançado", "Tratamento de Dados", "Lógica"]
-  }
-];
+const experiences = {
+  pt: [
+    {
+      role: "Analista Júnior – Soluções de IA e Engenharia de Dados",
+      company: "Travelex Bank",
+      date: "09/2025 – Atual",
+      desc: "Estruturação de bancos relacionais e vetoriais, arquiteturas RAG integradas a APIs de LLMs, construção de microsserviços em Python e automações escaláveis no n8n.",
+      tech: ["Python", "LangChain", "OpenAI", "n8n", "RAG", "Kubernetes", "Spark", "RabbitMQ", "SFTP", "Grafana"]
+    },
+    {
+      role: "Estagiário em Análise de Dados e RPA",
+      company: "Travelex Bank",
+      date: "07/2024 – 09/2025",
+      desc: "Desenvolvimento de dashboards com PowerBI, rotinas ETL em Python com Pandas, modelagem de BDs e desenvolvimento de microsserviços Flask em ambientes Windows Server/Linux.",
+      tech: ["Python", "Pandas", "ApexCharts", "SQL Server", "Flask", "PowerBI", "Power automate"]
+    },
+    {
+      role: "Auxiliar de Faturamento de Dados (Aprendiz)",
+      company: "Hospital de Caieiras (AMIL)",
+      date: "02/2023 – 03/2024",
+      desc: "Tratamento de dados e automações para higienização de grandes volumes de registros operacionais.",
+      tech: ["Excel Avançado", "VBA", "openpyxl"]
+    }
+  ],
+  en: [
+    {
+      role: "Junior Data Engineer & AI Solutions Analyst",
+      company: "Travelex Bank",
+      date: "09/2025 – Present",
+      desc: "Structuring relational and vector databases, RAG architectures integrated with LLM APIs, building Python microservices, and scalable n8n automations.",
+      tech: ["Python", "LangChain", "OpenAI", "n8n", "RAG", "Kubernetes", "Spark", "RabbitMQ", "SFTP", "Grafana"]
+    },
+    {
+      role: "Data Analytics & RPA Intern",
+      company: "Travelex Bank",
+      date: "07/2024 – 09/2025",
+      desc: "Development of dashboards with ApexCharts, Python ETL routines with Pandas, DB modeling, and deployment of Flask microservices in Windows Server/Linux environments.",
+      tech: ["Python", "Pandas", "ApexCharts", "SQL Server", "Flask", "PowerBI", "Power automate"]
+    },
+    {
+      role: "Data Billing Assistant (Apprentice)",
+      company: "Hospital de Caieiras (AMIL)",
+      date: "02/2023 – 03/2024",
+      desc: "Data processing and automation for cleaning large volumes of operational records.",
+      tech: ["Excel Avançado", "VBA", "openpyxl"]
+    }
+  ]
+};
 
 export default function Experience() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="experience" className="py-32 px-6 md:px-24 bg-black text-white">
@@ -45,7 +70,7 @@ export default function Experience() {
         </div>
 
         <div className="relative border-l-2 border-neutral-800 ml-4 md:ml-0 space-y-16 pb-8">
-          {experiences.map((exp, index) => (
+          {experiences[language].map((exp, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, x: -50 }}

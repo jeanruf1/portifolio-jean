@@ -18,7 +18,7 @@ export function Marquee({ items }: MarqueeProps) {
           className="flex gap-8 px-4"
           animate={{ x: "-50%" }}
           transition={{
-            duration: 20,
+            duration: 120,
             repeat: Infinity,
             ease: "linear",
           }}
