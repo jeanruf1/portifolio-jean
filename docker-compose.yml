@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    # Use standard Node.js image for development
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      # Cache node_modules so it doesn't try to sync entirely with Windows
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+
+volumes:
+  node_modules:
