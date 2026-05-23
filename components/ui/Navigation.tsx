@@ -13,7 +13,7 @@ export default function Navigation() {
       className="fixed top-0 w-full z-50 flex items-center justify-between px-6 md:px-24 py-6 bg-black/80 backdrop-blur-md border-b border-neutral-900"
     >
       <div className="text-white font-oswald text-xl font-bold tracking-widest uppercase">
-        Jean Pereira
+        Jean Rufino
       </div>
 
       <div className="flex items-center gap-8">

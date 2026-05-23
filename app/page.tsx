@@ -1,27 +1,23 @@
 import Navigation from "@/components/ui/Navigation";
 import Hero from "@/components/sections/Hero";
 import { Marquee } from "@/components/ui/Marquee";
+import SkillsGrid from "@/components/sections/SkillsGrid";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
-
-export const revalidate = 0; // Disable static rendering for API fetch
-
-async function getProjects() {
-  const res = await fetch("http://localhost:3000/api/projects", { cache: "no-store" });
-  if (!res.ok) return [];
-  return res.json();
-}
+import { Github, Linkedin } from "lucide-react";
+import { allProjects } from "@/data/projects";
 
 const techStack = [
-  "Python", "React", "Next.js", "Docker", "Kubernetes", "AWS", "n8n", "PostgreSQL", 
-  "MongoDB", "TypeScript", "LangChain", "RAG", "SQL Server", "Power BI", "Flask", 
-  "Apache Spark", "Excel Avançado", "OpenAI API", "TailwindCSS", "Framer Motion"
+  "Python", "JavaScript", "React", "Next.js", "HTML", "CSS", "Tailwind", "Docker",
+  "Kubernetes", "AWS", "Azure", "PostgreSQL", "MongoDB", "SQL Server", "SQL",
+  "TypeScript", "Apache Spark", "Elasticsearch", "Grafana", "RabbitMQ", "Hadoop",
+  "Terraform", "Pandas", "Flask", "Django", "n8n", "LangChain", "OpenAI", "Claude",
+  "Apache Flink", "Airflow", "dbt", "Snowflake", "Databricks", "BigQuery", "Redshift",
+  "Power BI", "Excel", "Power Apps", "Power Automate", "Framer Motion", "Robot Framework", "Selenium", "RAG", "Kanban"
 ];
 
-export default async function Home() {
-  const projects = await getProjects();
-
+export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       <Navigation />
@@ -30,17 +26,23 @@ export default async function Home() {
       
       <Marquee items={techStack} />
 
-      <Projects projects={projects} />
+      <SkillsGrid />
+
+      <Projects projects={allProjects} />
       
       <Experience />
       
       <Contact />
       
-      <footer className="py-8 text-center text-neutral-500 border-t border-neutral-900 bg-black text-xs uppercase tracking-widest font-mono">
-        <p>© 2026 Jean Pereira. Todos os direitos reservados.</p>
-        <div className="flex justify-center gap-6 mt-4">
-          <a href="https://github.com/jeanruf1" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
-          <a href="https://linkedin.com/in/jeanrufino/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+      <footer className="py-12 text-center text-neutral-500 border-t border-neutral-900 bg-black text-xs uppercase tracking-widest font-mono">
+        <p className="mb-6">© 2026 Jean Rufino. Todos os direitos reservados.</p>
+        <div className="flex justify-center gap-8">
+          <a href="https://github.com/jeanruf1" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+            <Github size={18} /> GITHUB
+          </a>
+          <a href="https://linkedin.com/in/jeanrufino/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+            <Linkedin size={18} /> LINKEDIN
+          </a>
         </div>
       </footer>
     </main>
