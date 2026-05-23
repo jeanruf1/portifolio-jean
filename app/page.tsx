@@ -1,12 +1,25 @@
+import Hero from "@/components/sections/Hero";
+import Skills from "@/components/sections/Skills";
+import Experience from "@/components/sections/Experience";
+import Projects from "@/components/sections/Projects";
+import Contact from "@/components/sections/Contact";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-      </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <Hero />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Contact />
+      
+      <footer className="py-8 text-center text-neutral-500 border-t border-neutral-900 bg-background text-sm">
+        <p>© 2026 Jean Pereira Rufino de Lima. Todos os direitos reservados.</p>
+        <div className="flex justify-center gap-6 mt-4">
+          <a href="https://github.com/jeanruf1" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/jeanrufino/" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
+        </div>
+      </footer>
     </main>
   );
 }
