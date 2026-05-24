@@ -1,6 +1,15 @@
 # Jean Rufino
 ### Data Engineering & AI Solutions | Engenharia de Dados & Soluções de IA
 
+<div align="center">
+  <br>
+  <a href="https://www.jeanruf1no.site/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Acessar_Meu_Portfólio-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfólio de Jean Rufino">
+  </a>
+  <p>🚀 <i>Veja na prática a aplicação rodando!</i></p>
+  <br>
+</div>
+
 ---
 
 [English](#english) | [Português](#português)
@@ -31,79 +40,7 @@ A highly responsive, modern, and bilingual portfolio designed to showcase projec
 
 ### Setup
 
-#### Clone the project
+#### 1. Clone the project
 ```bash
-git clone https://github.com/jeanruf1/portfolio-jean.git
+git clone [https://github.com/jeanruf1/portfolio-jean.git](https://github.com/jeanruf1/portfolio-jean.git)
 cd portfolio-jean
-```
-
-<<<<<<< HEAD
----
-
-## Português
-
-Um portfólio altamente responsivo, moderno e bilíngue projetado para demonstrar projetos, experiência e conhecimento em Engenharia de Dados e Inteligência Artificial. Desenvolvido utilizando Next.js 14, Tailwind CSS e Framer Motion.
-
-### Funcionalidades
-* **Arquitetura Bilíngue:** Troca instantânea de idioma entre inglês e português no lado do cliente.
-* **Interface Moderna:** Micro-interações e transições fluidas criadas com Framer Motion.
-* **Envio Direto de Formulários:** Formulário de contato integrado diretamente com Web3Forms pelo cliente.
-* **Pronto para Docker:** Suporte completo ao Docker e Docker Compose para desenvolvimento local isolado.
-* **Proteção de Hidratação:** Pré-configurado com importação de dados estáticos para evitar erros de divergência no SSR.
-
-### Tecnologias Utilizadas
-| Ferramenta | Escopo |
-| :--- | :--- |
-| Next.js 14 | Framework React com App Router para roteamento rápido e otimizado |
-| Tailwind CSS | Framework utilitário para estilização responsiva e personalizada |
-| Framer Motion | Animações suaves e declarativas baseadas em gestos |
-| Web3Forms | Integração para envio de e-mails diretamente pelo frontend |
-| Docker | Conteinerização para garantir um ambiente local reprodutível |
-
----
-
-### Configuração
-
-#### Clonar o projeto
-```bash
-git clone https://github.com/jeanruf1/portfolio-jean.git
-cd portfolio-jean
-```
-
----
-
-*Desenhado e desenvolvido por Jean Rufino.*
-=======
-### 2. Configure Environment Variables
-Copy the `.env.example` file to create your local `.env.local` configuration.
-```bash
-cp .env.example .env.local
-```
-Add your free Web3Forms access key to `.env.local` to enable contact form submissions.
-
-### 3. Run with Docker (Recommended)
-This project is configured to run flawlessly with Docker and Docker Compose.
-```bash
-docker compose up
-```
-Open `http://localhost:3000` to view it in the browser.
-
-### 4. Or run locally with Node.js
-If you prefer running directly on your host machine:
-```bash
-npm install
-npm run dev
-```
-
-## 🛠 Tech Stack
-
-* **Framework:** React + Next.js
-* **Styling:** Tailwind CSS + Lucide Icons
-* **Animations:** Framer Motion
-* **Deployment/Dev:** Docker + Docker Compose
-* **API Integration:** Web3Forms
-
-## 📝 License
-
-© 2026 Jean Rufino. All rights reserved.
->>>>>>> dev
